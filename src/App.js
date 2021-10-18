@@ -29,7 +29,7 @@ const STARTING_TIME = 60
         textBoxRef.current.focus()
   }
 
-  function endGame() {
+ function endGame() {
     setIsTimeRunning(false)
     setWordCount(calculateWordCount(text))
   }
@@ -40,10 +40,11 @@ const STARTING_TIME = 60
         setTimeRemaining(time => time - 1)
       }, 1000)
     } else if (timeRemaining === 0) {
-      endGame()
-
+     endGame()  // eslint-disable-line react-hooks/exhaustive-deps
+   
+      
     }
-  }, [timeRemaining, isTimeRunning])
+  }, [timeRemaining, isTimeRunning]) // eslint-disable-line react-hooks/exhaustive-deps
 
 
   return (
